@@ -1,6 +1,3 @@
-/*--------------------------------------------------------------
-# General
---------------------------------------------------------------*/
 :root {
   scroll-behavior: smooth;
 }
@@ -8,17 +5,7 @@
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
-}
-body::before {
-  content: "";
-  position: fixed;
-  background: url("../img/logos/banenr.png") center center no-repeat;
-  background-size: cover;
-  left: 0;
-  right: 0;
-  top: 0;
-  height: 100vh;
-  z-index: -1;
+  background-color: #1d1027;
 }
 
 a {
@@ -46,7 +33,6 @@ h6 {
 section {
   padding: 60px 0;
   overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.76);
 }
 
 .section-header {
@@ -78,6 +64,16 @@ section {
     line-height: 32px;
   }
 }
+
+/*--------------------------------------------------------------
+# Disable aos animation delay on mobile devices
+--------------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+  [data-aos-delay] {
+    transition-delay: 0 !important;
+  }
+}
+
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -85,18 +81,18 @@ section {
   transition: all 0.5s;
   z-index: 997;
   padding: 20px 0;
+  margin-left: 100px;
+
 }
+
 .header .logo {
   line-height: 0;
 }
 
 .header .logo img {
-  max-height: 130px;
-  margin-right: 6px;
+  max-height: 100px;
 }
-/*--------------------------------------------------------------
-# Navigation Menu
---------------------------------------------------------------*/
+
 /**
 * Desktop Navigation 
 */
@@ -123,9 +119,7 @@ section {
   justify-content: space-between;
   padding: 10px 0 10px 30px;
   font-family: "Nunito", sans-serif;
-  font-size: 23px;
-  font-weight: 900;
-  font-style: italic;
+  font-size: 22px;
   color: #ffffff;
   white-space: nowrap;
   transition: 0.3s;
@@ -142,14 +136,14 @@ section {
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
-  color: #fff054;
+  color: #4154f1;
 }
 
 .navbar .getstarted,
 .navbar .getstarted:focus {
   background: #4154f1;
   padding: 8px 20px;
-  margin-left: 300px;
+  margin-left: 30px;
   border-radius: 4px;
   color: #fff;
 }
@@ -361,25 +355,40 @@ section {
   display: block;
 }
 
-/*--------------------------------------------------------------
-# Hero Section
---------------------------------------------------------------*/
 .hero {
+
   width: 100%;
   height: 100vh;
+  background: url("../img/logos/bg-2.png") top center;
+  background-size: cover;
+  position: relative;
+  padding-top: 120px;
+}
+
+#hero:before {
+  content: "";
+  background: linear-gradient(transparent 0, rgba(0, 0, 0, 0) 30%, #1d1027 100%);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
 }
 
 .hero h1 {
   margin: 0;
-  font-size: 50px;
-  font-weight: 800;
+  font-size: 48px;
+  font-weight: 700;
   color: #ffffff;
+  z-index: 20;
 }
 
 .hero h2 {
-  color: #444444;
+  color: #ffffff;
   margin: 15px 0 0 0;
   font-size: 26px;
+  z-index: 20;
 }
 
 .hero .btn-get-started {
@@ -387,6 +396,8 @@ section {
   line-height: 0;
   padding: 15px 40px;
   border-radius: 4px;
+  position: relative;
+  z-index: 2;
   transition: 0.5s;
   color: #fff;
   background: #4154f1;
@@ -396,6 +407,7 @@ section {
 .hero .btn-get-started span {
   font-family: "Nunito", sans-serif;
   font-weight: 600;
+  z-index: 2;
   font-size: 16px;
   letter-spacing: 1px;
 }
@@ -411,7 +423,14 @@ section {
 }
 
 .hero .hero-img {
-  text-align: right;
+  text-align: center;
+  margin: 0;
+  filter: drop-shadow(1px 10px 20px rgba(65, 83, 241, 0.267));
+}
+
+.hero img {
+  height: 450px;
+
 }
 
 @media (min-width: 1024px) {
@@ -452,4 +471,240 @@ section {
   .hero .hero-img img {
     width: 100%;
   }
+}
+
+/*--------------------------------------------------------------
+# Index Page
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# About
+--------------------------------------------------------------*/
+.about .content {
+  background-color: #f6f9ff;
+  padding: 40px;
+}
+
+.about h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #4154f1;
+  text-transform: uppercase;
+}
+
+.about h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #012970;
+}
+
+.about p {
+  margin: 15px 0 30px 0;
+  line-height: 24px;
+}
+
+.about .btn-read-more {
+  line-height: 0;
+  padding: 15px 40px;
+  border-radius: 4px;
+  transition: 0.5s;
+  color: #fff;
+  background: #4154f1;
+  box-shadow: 0px 5px 25px rgba(65, 84, 241, 0.3);
+}
+
+.about .btn-read-more span {
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.about .btn-read-more i {
+  margin-left: 5px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.about .btn-read-more:hover i {
+  transform: translateX(5px);
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+.footer {
+  background: #f6f9ff;
+  padding: 0 0 30px 0;
+  font-size: 14px;
+}
+
+.footer .footer-newsletter {
+  padding: 50px 0;
+  background: #f6f9ff;
+  border-top: 1px solid #e1ecff;
+}
+
+.footer .footer-newsletter h4 {
+  font-size: 24px;
+  margin: 0 0 10px 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 700;
+  color: #012970;
+}
+
+.footer .footer-newsletter form {
+  margin-top: 20px;
+  background: #fff;
+  padding: 6px 10px;
+  position: relative;
+  border-radius: 4px;
+  border: 1px solid #e1ecff;
+}
+
+.footer .footer-newsletter form input[type=email] {
+  border: 0;
+  padding: 8px;
+  width: calc(100% - 140px);
+}
+
+.footer .footer-newsletter form input[type=submit] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border: 0;
+  background: none;
+  font-size: 16px;
+  padding: 0 30px;
+  margin: 3px;
+  background: #4154f1;
+  color: #fff;
+  transition: 0.3s;
+  border-radius: 4px;
+}
+
+.footer .footer-newsletter form input[type=submit]:hover {
+  background: #5969f3;
+}
+
+.footer .footer-top {
+  background: white url(../img/footer-bg.png) no-repeat right top;
+  background-size: contain;
+  border-top: 1px solid #e1ecff;
+  border-bottom: 1px solid #e1ecff;
+  padding: 60px 0 30px 0;
+}
+
+@media (max-width: 992px) {
+  .footer .footer-top {
+    background-position: center bottom;
+  }
+}
+
+.footer .footer-top .footer-info {
+  margin-bottom: 30px;
+}
+
+.footer .footer-top .footer-info .logo {
+  line-height: 0;
+  margin-bottom: 15px;
+}
+
+.footer .footer-top .footer-info .logo img {
+  max-height: 40px;
+  margin-right: 6px;
+}
+
+.footer .footer-top .footer-info .logo span {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #012970;
+  font-family: "Nunito", sans-serif;
+  margin-top: 3px;
+}
+
+.footer .footer-top .footer-info p {
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 0;
+  font-family: "Nunito", sans-serif;
+}
+
+.footer .footer-top .social-links a {
+  font-size: 20px;
+  display: inline-block;
+  color: rgba(1, 41, 112, 0.5);
+  line-height: 0;
+  margin-right: 10px;
+  transition: 0.3s;
+}
+
+.footer .footer-top .social-links a:hover {
+  color: #012970;
+}
+
+.footer .footer-top h4 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #012970;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.footer .footer-top .footer-links {
+  margin-bottom: 30px;
+}
+
+.footer .footer-top .footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer .footer-top .footer-links ul i {
+  padding-right: 2px;
+  color: #d0d4fc;
+  font-size: 12px;
+  line-height: 0;
+}
+
+.footer .footer-top .footer-links ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.footer .footer-top .footer-links ul li:first-child {
+  padding-top: 0;
+}
+
+.footer .footer-top .footer-links ul a {
+  color: #013289;
+  transition: 0.3s;
+  display: inline-block;
+  line-height: 1;
+}
+
+.footer .footer-top .footer-links ul a:hover {
+  color: #4154f1;
+}
+
+.footer .footer-top .footer-contact p {
+  line-height: 26px;
+}
+
+.footer .copyright {
+  text-align: center;
+  padding-top: 30px;
+  color: #012970;
+}
+
+.footer .credits {
+  padding-top: 10px;
+  text-align: center;
+  font-size: 13px;
+  color: #012970;
 }
