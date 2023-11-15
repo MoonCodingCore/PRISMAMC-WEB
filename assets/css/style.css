@@ -255,6 +255,8 @@ h6 {
   background: url("../img/fotos/banner.png") top center;
   background-size: cover;
   position: relative;
+
+  
 }
 
 #home:before {
@@ -271,6 +273,7 @@ h6 {
   position: relative;
   padding-top: 74px;
   text-align: left;
+  
 }
 
 #home h1 {
@@ -319,6 +322,14 @@ h6 {
 
 .store {
   padding: 0;
+
+  view-timeline-name: --revealing-img;
+
+  animation-name: show;
+  animation-fill-mode: both;
+  animation-timeline: --revealing-img;
+
+  animation-range: entry 25% cover 50%;
 }
 
 .store .container {
@@ -330,6 +341,7 @@ h6 {
 
 .store img {
   border-radius: 1rem;
+  
 }
 
 .store .title {
@@ -381,6 +393,13 @@ h6 {
 
 .counts {
   padding-top: 150px;
+  view-timeline-name: --revealing-img;
+
+  animation-name: show;
+  animation-fill-mode: both;
+  animation-timeline: --revealing-img;
+
+  animation-range: entry 25% cover 50%;
 }
 
 .counts .count-box {
@@ -442,7 +461,15 @@ h6 {
   padding-top: 6px;
   letter-spacing: 1px;
 }
+.services{
+  view-timeline-name: --revealing-img;
 
+  animation-name: show;
+  animation-fill-mode: both;
+  animation-timeline: --revealing-img;
+
+  animation-range: entry 25% cover 50%;
+}
 .services .icon-box {
   text-align: center;
   border-radius: 1rem;
@@ -583,5 +610,15 @@ h6 {
     align-items: center;
     justify-content: center;
 
+  }
+}
+@keyframes show{
+  from {
+    opacity: 0;
+    scale: 25%;
+  }
+  to{
+    opacity: 1;
+    scale: 100%;
   }
 }
