@@ -60,7 +60,7 @@ h6 {
 
 @media screen and (max-width: 768px) {
   [data-aos-delay] {
-    transition-delay: 0 !important;
+    transition-delay: 0ms !important;
   }
 }
 
@@ -169,7 +169,7 @@ h6 {
   opacity: 0;
   visibility: hidden;
   background: #fff;
-  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+  box-shadow: 0 0 30px rgba(127, 137, 161, 0.25);
   transition: 0.3s;
 }
 
@@ -334,7 +334,7 @@ h6 {
 
 .store .container {
   background-color: #1b1e2e;
-  box-shadow: 0px 2px 35px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 35px rgba(0, 0, 0, 0.06);
   border-radius: 1rem;
   padding: 20px 20px;
 }
@@ -407,9 +407,8 @@ h6 {
   width: 100%;
   position: relative;
   background-color: #1b1e2e;
-  box-shadow: 0px 2px 35px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 35px rgba(0, 0, 0, 0.06);
   text-align: center;
-  border-radius: 4px;
   border-radius: 1rem;
 
 }
@@ -484,7 +483,6 @@ h6 {
   height: 80px;
   background-color: #2e3558;
   color: #00b7ff;
-  border-radius: 4px;
   border-radius: 50%;
   display: flex;
   align-items: center;
